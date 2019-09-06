@@ -1,19 +1,18 @@
 import React from 'react';
-import HabitForm from './form/HabitForm';
 import {
   BrowserRouter as Router,
   Route, 
   Switch
 } from 'react-router-dom';
 import { withSession } from '../Auth0Provider';
-import CreateHabit from '../containers/CreateHabit';
+import HabitViewWrapper from './wrapper-habit-view/HabitViewWrapper';
 
 export default function App() {
   return  (
     <>
       <Router>
         <Switch>
-          <Route exact path='/' component={withSession(CreateHabit)} />
+          <Route exact path='/' component={withSession(HabitViewWrapper)} />
         </Switch>
       </Router>
     </>

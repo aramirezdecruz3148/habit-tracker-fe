@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Habits from '../components/habits-list/Habits';
 import { getHabits } from '../actions/habitsActions';
 import PropTypes from 'prop-types';
+import { getListOfHabits } from '../selectors/habitsSelectors';
 
 class HabitListView extends Component {
   static propTypes = {
@@ -22,7 +23,7 @@ class HabitListView extends Component {
 }
 
 const mapStateToProps = state => ({
-  list: getHabits(state)
+  list: getListOfHabits(state)
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,1 +1,1 @@
-export const getHabits = state => state.habits.list;
+export const getListOfHabits = state => state.habits.list;
