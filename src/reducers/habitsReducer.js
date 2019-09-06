@@ -11,7 +11,7 @@ export default function reducer(state = initialState, action) {
     case CREATE_HABIT:
       return { ...state, list: [...state.list, action.payload] };
     case GET_HABITS:
-      return { ...state, list: [...state.list, action.payload] };
+      return { ...state, list: action.payload };
     default:
       return state;
   }
