@@ -20,7 +20,11 @@ export const postHabit = (habit, description) => {
 
 export const getUserHabits = () => {
   return fetch(`${process.env.API_URL}/api/v1/habits`, {
-
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`
+    }
   }).then(res => {
     if(!res.ok) throw 'Could not get list of Habits.';
 

@@ -10,6 +10,7 @@ class HabitListView extends Component {
     fetch: PropTypes.func.isRequired,
     list: PropTypes.array.isRequired
   }
+  
   componentDidMount() {
     this.props.fetch();
   }
