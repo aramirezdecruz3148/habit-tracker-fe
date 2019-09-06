@@ -45,10 +45,9 @@ export default function Auth0Provider({ children, onRedirectCallback = DEFAULT_R
       if(isAuthenticated) {
         const user = await auth0.getUser();
         setUser(user);
+        const claims = await auth0.getIdTokenClaims();
+        setToken(claims.__raw);
       }
-
-      const claims = await auth0.getIdTokenClaims();
-      setToken(claims.__raw);
 
       updateLoading(false);
     };
