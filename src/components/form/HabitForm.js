@@ -8,6 +8,8 @@ function HabitForm({ handleSubmit }) {
   const onSubmit = event => {
     event.preventDefault();
     handleSubmit(habit, description);
+    setHabit('');
+    setDescription('');
   };
 
   return (
