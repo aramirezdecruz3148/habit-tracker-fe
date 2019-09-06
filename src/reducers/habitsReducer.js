@@ -1,4 +1,4 @@
-import { CREATE_HABIT } from '../actions/habitsActions';
+import { CREATE_HABIT, GET_HABITS } from '../actions/habitsActions';
 
 const initialState = {
   list: [],
@@ -9,6 +9,8 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   switch(action.type) {
     case CREATE_HABIT:
+      return { ...state, list: [...state.list, action.payload] };
+    case GET_HABITS:
       return { ...state, list: [...state.list, action.payload] };
     default:
       return state;
